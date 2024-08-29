@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block pagetitle %} Index {% endblock %}</title>
+    {% block styles %} <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">{% endblock %}
+</head>
+<body>
+    
+    <nav>{% block head %}<h2>Escola </h2> {% block link %} <div class="botoes"><button><a href="/">Página Incial</a></button><button><a href="/dash">Rigistro</a></button></div> {% endblock %} {% endblock %}</nav>
+    
+
+    {% block content %} {% endblock %}
+    
+
+    {% block form %}
+    <form action="{{url_for('dash')}}" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome"> <br> <br>
+        <input type="number" name="mat" placeholder="Sua matrícula"> <br>
+        <button type="submit">Enviar</button>
+    </form>
+    {% endblock %}
+
+
+
+    
+</body>
+</html>

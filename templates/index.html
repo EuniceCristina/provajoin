@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block pagetitle %} Index {% endblock %}
+
+
+
+
+
+{% block content %}
+
+<h1>Página Inicial</h1>
+<h3>Alunos cadastrados </h3>
+<ul>
+    {% for aluno in alunos %}
+
+    <li>Aluno: {{aluno['nome']}} <br>
+        Matrícula : {{aluno['matricula']}} <br><br>
+        <a href="{{url_for('edit', id=aluno['id'])}}">Edite aluno aqui</a><br><br>
+    </li>
+
+    {% endfor %} 
+</ul>
+
+
+
+
+
+{% endblock %}
+
+
+{% block form %} {%endblock %}
+

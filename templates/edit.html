@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block form %}{% endblock %}
+
+{% block content %}
+<h1>Update</h1>
+
+<form action="{{url_for('edit', id=aluno['id'])}}" method="post">
+    <input type="text" name="nome" placeholder="Nome" >
+    <input type="number" name="mat" placeholder="Matricula">
+    <button>Enviar</button>
+</form>
+
+{% endblock %}
